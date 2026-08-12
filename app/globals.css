@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
+
+* {
+  border-color: theme("colors.line");
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: radial-gradient(circle at 50% 50%, #140305 0%, #050505 100%);
+  background-attachment: fixed;
+  color: theme("colors.ink");
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url('/varsha_photo_bg.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.42;
+  filter: grayscale(100%) contrast(1.15) brightness(0.38);
+  pointer-events: none;
+  z-index: -2;
+}
+
+::selection {
+  background-color: theme("colors.signal");
+  color: theme("colors.paper");
+}
+
+/* Visible, deliberate focus states everywhere */
+:focus-visible {
+  outline: 2px solid theme("colors.signal");
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Utility: index-rail dotted spine used across sections */
+.rail-line {
+  background-image: linear-gradient(to bottom, theme("colors.line") 1px, transparent 1px);
+  background-size: 1px 6px;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
