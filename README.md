@@ -1,4 +1,4 @@
-# Developer & Analyst Portfolio
+# My Portfolio
 
 A professional, high-performance portfolio website styled as a field notebook and instrument panel, featuring smooth animations and a live wait-time calculator.
 
